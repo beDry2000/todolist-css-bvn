@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  width: 100vw;
+  height: 100vh;
+  animation: gradient-animation 5s ease infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes gradient-animation {
+  0% {
+    background-color: rgba(255, 191, 202, 1);
+  }
+
+  25% {
+    background-color: rgba(247, 192, 204, 1);
+  }
+
+  50% {
+    background-color: rgb(80, 226, 255);
+  }
+
+  100% {
+    background-color: rgba(255, 191, 202, 1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todoApp {
+  width: 50%;
+  min-height: 200px;
+  margin: 20px auto;
+  border: 3px solid black;
+  padding: 10px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: rgba(255, 192, 203, 0.564);
+  backdrop-filter: blur(1000px);
+  border-radius: 20px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.todoApp:after {
+  backdrop-filter: blur(10px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+#userInput {
+  font-size: 1.1rem;
+  width: 60%;
+  padding: 5px 3px;
+  border-radius: 5px;
+}
+
+.addtodo {
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.addtodo .btn {
+  width: 20%;
+}
+
+
+
+.item-container {
+  width: 80%
+}
+
+.todoItem {
+  display: flex;
+  margin: 10px 0;
+}
+
+.task {
+  flex: 60%;
+}
+.todoItem input {
+  width: 18px;
+  height: 18px;
+  align-self: baseline;
+  margin-right: 5px;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 3px;
+}
+
+.btn {
+  background-color: hsl(350, 100%, 87%);
+  color: black;
+  padding: 5px;
+  width: 30%;
+  border-radius: 10px;
+}
+
+.todoItem .btn {
+  align-self: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .todoApp {
+    width: 70%;
+    padding: 10px 10px;
   }
 }
